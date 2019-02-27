@@ -50,4 +50,14 @@ class EnigmaTest < Minitest::Test
     }
     assert_equal expected, enigma.encrypt("hello world", "02715")
   end
+  
+  def test_it_can_decrypt_without_a_date_provided
+    enigma = Enigma.new("hello world", "02715")
+    expected = {
+      decryption: "hello world",
+      key: "02715",
+      date: enigma.todays_date
+    }
+    assert_equal expected, enigma.decrypt("qnhaxisd u ", "02715")
+  end
 end
