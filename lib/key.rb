@@ -9,6 +9,15 @@ class Key
     keys
   end
 
+  def offsets
+    offsets = {}
+    offsets[:A_offset] = date_squared[-4].to_i
+    offsets[:B_offset] = date_squared[-3].to_i
+    offsets[:C_offset] = date_squared[-2].to_i
+    offsets[:D_offset] = date_squared[-1].to_i
+    offsets
+  end
+
   def date_squared
     date = "040895"
     new_date = date.to_i ** 2
