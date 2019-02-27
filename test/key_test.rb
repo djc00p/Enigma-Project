@@ -15,4 +15,8 @@ class KeyTest < Minitest::Test
     assert_instance_of Integer, @key.keys[:C_key]
     assert_instance_of Integer, @key.keys[:D_key]
   end
+
+  def test_getting_squared_value_of_the_date
+    assert_instance_of String, @key.date_squared
+  end
 end
