@@ -2,8 +2,9 @@ require './test/test_helper'
 require 'pry'
 
 class KeyTest < Minitest::Test
+
   def setup
-    @enigma = Enigma.new("hello world", "02715", "040895")
+    @enigma = Enigma.new
   end
 
   def test_keys_are_seperated_from_generated_number
