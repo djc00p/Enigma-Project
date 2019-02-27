@@ -22,4 +22,5 @@ class DecryptionTest < Minitest::Test
     assert_equal 2, @decryption.decrypt_letter_index("h", 5)
     assert_equal -65, @decryption.decrypt_letter_index("a", 65)
   end
+  
 end
