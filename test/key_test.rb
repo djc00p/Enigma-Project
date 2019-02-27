@@ -21,9 +21,9 @@ class KeyTest < Minitest::Test
   end
 
   def test_offset_values_are_set_as_the_last_four_of_date_squarred
-    assert_instance_of Integer, @enigma.offsets[:A_offset]
-    assert_instance_of Integer, @enigma.offsets[:B_offset]
-    assert_instance_of Integer, @enigma.offsets[:C_offset]
-    assert_instance_of Integer, @enigma.offsets[:D_offset]
+    assert_instance_of Integer, @key.offsets[:A_offset]
+    assert_instance_of Integer, @key.offsets[:B_offset]
+    assert_instance_of Integer, @key.offsets[:C_offset]
+    assert_instance_of Integer, @key.offsets[:D_offset]
   end
 end
