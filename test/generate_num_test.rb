@@ -1,7 +1,4 @@
-require 'minitest/autorun'
-require 'minitest/pride'
-require './lib/generate_num'
-require './lib/enigma'
+require './test/test_helper'
 require 'pry'
 
 class GenerateNumberTest < Minitest::Test

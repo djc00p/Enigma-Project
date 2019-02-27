@@ -1,9 +1,4 @@
-require 'minitest/autorun'
-require 'minitest/pride'
-require './lib/encryption'
-require './lib/decryption'
-require './lib/key'
-require './lib/enigma'
+ require './test/test_helper'
 require 'pry'
 
 class DecryptionTest < Minitest::Test
