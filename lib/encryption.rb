@@ -1,18 +1,11 @@
-class Encryption
+module Encryption
+
   def characters
     ("a".."z").to_a << " "
   end
 
-  def key
-  {
-    A: 3,
-    B: 27,
-    C: 73,
-    D: 20
-  }
-  end
   def encrypt_message(message)
-    key_values = key.values
+    key_values = final_shifts.values
     new_message = String.new
     message.downcase.each_char do |letter|
       new_number = key_values.first
@@ -22,7 +15,7 @@ class Encryption
     new_message
   end
 
-  def encrypt_letter_shift(letter,number)
+  def encrypt_letter_shift(letter, number)
     if characters.index(letter).nil?
       letter
     else
@@ -31,6 +24,6 @@ class Encryption
   end
 
   def encrypt_letter_index(letter,number)
-   characters.index(letter) + number
+    characters.index(letter) + number
   end
 end
