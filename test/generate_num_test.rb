@@ -2,8 +2,9 @@ require './test/test_helper'
 require 'pry'
 
 class GenerateNumberTest < Minitest::Test
+
   def setup
-    @enigma = Enigma.new("hello world", "02715", "040895")
+    @enigma = Enigma.new
   end
 
   def test_if_it_a_generate_a_number

@@ -11,25 +11,27 @@ class Enigma
 
   attr_reader :message, :key, :date
 
-  def initialize(message, key = random_num_generator, date = todays_date)
-    @message = message
-    @key = key
-    @date = date
+  def initialize
+    @message = ""
+    @key = ""
+    @date = ""
     @output = Hash.new
   end
 
-  def encrypt
-    @output[:encryption] = encrypt_message(@message)
-    @output[:key] = @key
-    @output[:date] = @date
+  def encrypt(message, key = random_num_generator, date = todays_date)
+    @date = date
+    @key = key
+    @output[:encryption] = encrypt_message(message)
+    @output[:key] = key
+    @output[:date] = date
     @output
   end
 
-  def decrypt
-    encrypted_message = @output[:encryption]
-    # binding.pry
+  def decrypt(message, key, date = todays_date)
+    @date = date
+    @key = key
     {
-      decryption: decrypt_message(@message),
+      decryption: decrypt_message(message),
       key: @key,
       date: @date
     }
