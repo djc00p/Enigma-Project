@@ -1,18 +1,8 @@
-class Decryption
-  def characters
-    ("a".."z").to_a << " "
-  end
-  def key
-  {
-    A: 3,
-    B: 27,
-    C: 73,
-    D: 20
-  }
-  end
+module Decryption
+
   def decrypt_message(message)
-    key_values = key.values
     new_message = String.new
+    key_values = final_shifts.values
     message.downcase.each_char do |letter|
       new_number = key_values.first
       new_message  << decrypt_letter_shift(letter, new_number)
