@@ -34,4 +34,10 @@ class EnigmaTest < Minitest::Test
   }
     assert_equal expected, enigma.decrypt("keder ohulw", "02715", "040895")
   end
+
+  def test_todays_date
+    enigma = Enigma.new("hello world", "02715", "040895")
+    assert_instance_of String, enigma.todays_date
+    assert_equal 6, enigma.todays_date.length
+  end
 end
