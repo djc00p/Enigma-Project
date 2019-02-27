@@ -71,4 +71,17 @@ class EnigmaTest < Minitest::Test
 
     assert_equal expected, enigma.encrypt("hello world")
   end
+
+  def test_it_can_decrypt_without_a_date_and_a_key
+    enigma = Enigma.new("hello world", "66727")
+    expected = {
+    decryption: "hello world",
+    key: "66727",
+    date:"260219"
+  }
+   assert_equal expected, enigma.decrypt("  imgvtpjga", "66727")
+  end
+# I couldnt figure out how to test decrypt without the key changing randomly so
+# I just inputed the values that my encryption returned pluged those into my decrypt.
+
 end
