@@ -16,10 +16,18 @@ class EncryptionTest < Minitest::Test
     assert_equal expected, @encryption.characters
   end
 
+  def test_change_of_letter_from_character_set_array
+    assert_instance_of String, @encryption.encrypt_message("This is awesome")
+  end
+
+  def test_it_will_keep_character_not_in_character_set
+    assert_instance_of String, @encryption.encrypt_message("Hello, I'm Deonte! 58")
+  end
+
   def test_to_get_an_index_of_a_letter
-    assert_instance_of Integer, @encryption.encrypt_letter_index(" ", 34)
-    assert_instance_of Integer, @encryption.encrypt_letter_index("h", 5)
-    assert_instance_of Integer, @encryption.encrypt_letter_index(" ", 1)
+    assert_equal 60, @encryption.encrypt_letter_index(" ", 34)
+    assert_equal 12, @encryption.encrypt_letter_index("h", 5)
+    assert_equal 27, @encryption.encrypt_letter_index(" ", 1)
   end
 
   def test_it_can_shift_letters
