@@ -26,4 +26,11 @@ class KeyTest < Minitest::Test
     assert_instance_of Integer, @key.offsets[:C_offset]
     assert_instance_of Integer, @key.offsets[:D_offset]
   end
+
+  def test_final_shifts_for_encryption
+    assert_instance_of Integer, @key.final_shifts[:A]
+    assert_instance_of Integer, @key.final_shifts[:B]
+    assert_instance_of Integer, @key.final_shifts[:C]
+    assert_instance_of Integer, @key.final_shifts[:D]
+  end
 end
