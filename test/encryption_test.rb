@@ -17,9 +17,14 @@ class EncryptionTest < Minitest::Test
   end
 
   def test_to_get_an_index_of_a_letter
-    assert_instance_of Integer, @enigma.encrypt_letter_index
-    assert_instance_of Integer, @enigma.encrypt_letter_index
-    assert_instance_of Integer, @enigma.encrypt_letter_index
+    assert_instance_of Integer, @encryption.encrypt_letter_index(" ", 34)
+    assert_instance_of Integer, @encryption.encrypt_letter_index("h", 5)
+    assert_instance_of Integer, @encryption.encrypt_letter_index(" ", 1)
+  end
+
+  def test_it_can_shift_letters
+    assert_equal "e", @encryption.encrypt_letter_shift("a", 85)
+    assert_equal "!", @encryption.encrypt_letter_shift("!", 85)
   end
 
 end
