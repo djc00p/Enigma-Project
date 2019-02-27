@@ -16,17 +16,17 @@ class EnigmaTest < Minitest::Test
     key: "02715",
     date: "040895"
   }
-    assert_equal expected, enigma.encrypt("hello world", "02715", "040895")
+    assert_equal expected, enigma.encrypt
   end
 
   def test_it_can_decrypt_a_messsage_and_return_a_hash
-    enigma = Enigma.new("hello world", "02715", "040895")
+    enigma = Enigma.new("keder ohulw", "02715", "040895")
     expected = {
     decryption: "hello world",
     key: "02715",
     date: "040895"
   }
-    assert_equal expected, enigma.decrypt("keder ohulw", "02715", "040895")
+    assert_equal expected, enigma.decrypt
   end
 
   def test_todays_date
@@ -42,17 +42,17 @@ class EnigmaTest < Minitest::Test
       key: "02715",
       date: enigma.todays_date
     }
-    assert_equal expected, enigma.encrypt("hello world", "02715")
+    assert_equal expected, enigma.encrypt
   end
 
   def test_it_can_decrypt_without_a_date_provided
-    enigma = Enigma.new("hello world", "02715")
+    enigma = Enigma.new("qnhaxisd u ", "02715")
     expected = {
       decryption: "hello world",
       key: "02715",
       date: enigma.todays_date
     }
-    assert_equal expected, enigma.decrypt("qnhaxisd u ", "02715")
+    assert_equal expected, enigma.decrypt
   end
 
   def test_it_can_ecrypt_without_a_date_and_a_key
@@ -63,7 +63,7 @@ class EnigmaTest < Minitest::Test
       date: enigma.todays_date
     }
 
-    assert_equal expected, enigma.encrypt("hello world")
+    assert_equal expected, enigma.encrypt
   end
 
   def test_it_can_decrypt_without_a_date_and_a_key
@@ -73,7 +73,7 @@ class EnigmaTest < Minitest::Test
     key: "66727",
     date:"260219"
   }
-   assert_equal expected, enigma.decrypt("  imgvtpjga", "66727")
+   assert_equal expected, enigma.decrypt
   end
 # I couldnt figure out how to test decrypt without the key changing randomly so
 # I just inputed the values that my encryption returned pluged those into my decrypt.
