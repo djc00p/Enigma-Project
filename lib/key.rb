@@ -23,4 +23,13 @@ class Key
     new_date = date.to_i ** 2
     new_date.to_s
   end
+
+  def final_shifts
+    final_shifts = {}
+    final_shifts[:A] = offsets[:A_offset] + keys[:A_key]
+    final_shifts[:B] = offsets[:B_offset] + keys[:B_key]
+    final_shifts[:C] = offsets[:C_offset] + keys[:C_key]
+    final_shifts[:D] = offsets[:D_offset] + keys[:D_key]
+    final_shifts
+  end
 end
