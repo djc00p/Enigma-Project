@@ -14,6 +14,12 @@ class DecryptionTest < Minitest::Test
   def test_character_set_exist
     expected = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
       "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
-    assert_equal expected, @enigma.characters
+    assert_equal expected, @decryption.characters
+  end
+
+  def test_to_get_an_index_of_negstive_value
+    assert_equal -8, @decryption.decrypt_letter_index(" ", 34)
+    assert_equal 2, @decryption.decrypt_letter_index("h", 5)
+    assert_equal -65, @decryption.decrypt_letter_index("a", 65)
   end
 end
