@@ -40,4 +40,14 @@ class EnigmaTest < Minitest::Test
     assert_instance_of String, enigma.todays_date
     assert_equal 6, enigma.todays_date.length
   end
+
+  def test_it_can_ecrypt_without_a_date_provided
+    enigma = Enigma.new("hello world", "02715")
+    expected = {
+      encryption: "qnhaxisd u ",
+      key: "02715",
+      date: enigma.todays_date
+    }
+    assert_equal expected, enigma.encrypt("hello world", "02715")
+  end
 end
