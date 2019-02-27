@@ -16,4 +16,10 @@ class EncryptionTest < Minitest::Test
     assert_equal expected, @encryption.characters
   end
 
+  def test_to_get_an_index_of_a_letter
+    assert_instance_of Integer, @enigma.encrypt_letter_index
+    assert_instance_of Integer, @enigma.encrypt_letter_index
+    assert_instance_of Integer, @enigma.encrypt_letter_index
+  end
+
 end
