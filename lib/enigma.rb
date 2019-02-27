@@ -32,4 +32,9 @@ class Enigma
       date: date
     }
   end
+  
+  def todays_date
+    date = Time.now
+    date.strftime("%d%m%y")
+  end
 end
