@@ -19,4 +19,9 @@ class DecryptionTest < Minitest::Test
     assert_instance_of Integer, @enigma.decrypt_letter_index("h", 5)
     assert_instance_of Integer, @enigma.decrypt_letter_index("a", 65)
   end
+  
+  def test_it_can_shift_letters
+    assert_equal "w", @enigma.decrypt_letter_shift("a", 5)
+    assert_equal "!", @enigma.decrypt_letter_shift("!", 85)
+  end
 end
