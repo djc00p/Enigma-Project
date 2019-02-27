@@ -17,6 +17,14 @@ class DecryptionTest < Minitest::Test
     assert_equal expected, @decryption.characters
   end
 
+  def test_change_of_letter_from_character_set_array
+    assert_instance_of String, @decryption.decrypt_message("whalciktdwxlrmx")
+  end
+
+  def test_it_will_keep_character_not_in_character_set
+    assert_instance_of String, @decryption.decrypt_message("keder, a'fcdxhqtx!t58")
+  end
+
   def test_to_get_an_index_of_negstive_value
     assert_equal -8, @decryption.decrypt_letter_index(" ", 34)
     assert_equal 2, @decryption.decrypt_letter_index("h", 5)
